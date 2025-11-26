@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChoiceScript IDE - Enterprise Edition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ChoiceScript IDE - Enterprise Edition</h1>
+            <div class="header-actions">
+                <button id="newProjectBtn" class="btn btn-primary">New Project</button>
+                <button id="saveBtn" class="btn btn-success">Save Project</button>
+                <button id="loadBtn" class="btn btn-info">Load Project</button>
+                <button id="exportBtn" class="btn btn-warning">Export</button>
+                <button id="importBtn" class="btn btn-warning">Import File</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <h3>Projects</h3>
+                <div id="projectList" class="project-list"></div>
+                <hr>
+                <h3>Quick Start</h3>
+                <div class="quick-start">
+                    <p>ChoiceScript Basics:</p>
+                    <ul>
+                        <li><code>*choice</code> - Create choices</li>
+                        <li><code>*create</code> - Define variables</li>
+                        <li><code>*stat_chart</code> - Show stats</li>
+                        <li><code>*finish</code> - End game</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <main class="editor-area">
+                <div class="editor-header">
+                    <input type="text" id="projectName" placeholder="Project Name" class="project-name-input">
+                    <button id="runBtn" class="btn btn-success">▶ Run Game</button>
+                </div>
+                
+                <div class="editor-wrapper">
+                    <textarea id="editor" placeholder="Start writing your ChoiceScript game here...
+
+Example:
+*create name &quot;Hero&quot;
+*create strength 50
+*create intelligence 50
+
+Welcome to your adventure, ${name}!
+
+Choose your path:
+
+*choice
+    #I'm a warrior
+        *set strength 70
+        You chose the path of strength!
+    #I'm a scholar
+        *set intelligence 70
+        You chose the path of knowledge!
+
+Your character stats:
+*stat_chart
+    text name
+    percent strength
+    percent intelligence
+
+*finish
+"></textarea>
+                </div>
+
+                <div class="editor-footer">
+                    <span id="charCount">0 characters</span>
+                    <span id="lineCount">0 lines</span>
+                </div>
+            </main>
+
+            <aside class="preview-panel">
+                <div class="preview-header">
+                    <h3>Game Preview</h3>
+                    <button id="clearPreviewBtn" class="btn btn-sm">Clear</button>
+                </div>
+                <div id="gamePreview" class="game-preview">
+                    <p class="placeholder">Click "Run Game" to preview your ChoiceScript game</p>
+                </div>
+            </aside>
+        </div>
+
+        <footer>
+            <div class="status-bar">
+                <span id="statusMessage">Ready</span>
+                <span id="lastSaved"></span>
+            </div>
+        </footer>
+    </div>
+
+    <input type="file" id="fileInput" accept=".txt,.cs" style="display: none;">
+    
+    <script src="choicescript-engine.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

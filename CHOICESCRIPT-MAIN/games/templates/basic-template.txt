@@ -1,0 +1,29 @@
+*create name ""
+*create stat1 50
+*create stat2 50
+
+Welcome to My Game!
+
+Your adventure starts here.
+
+This is a template - change this text to whatever you want!
+
+*choice
+    #First choice
+        Write what happens here
+        *set stat1 75
+        
+    #Second choice
+        Write what happens here
+        *set stat2 75
+        
+    #Third choice
+        Write what happens here
+        You can add as many choices as you want!
+
+*stat_chart
+    text name
+    percent stat1
+    percent stat2
+
+*finish
