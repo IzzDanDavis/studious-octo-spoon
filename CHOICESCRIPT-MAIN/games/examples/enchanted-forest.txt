@@ -1,0 +1,43 @@
+*create playerName "Hero"
+*create health 100
+*create gold 50
+
+Welcome to the Enchanted Forest!
+
+You are ${playerName}, a brave adventurer.
+
+You have ${health} health points and ${gold} gold coins.
+
+As you enter the forest, you see three paths:
+
+*choice
+    #Take the sunny path
+        You walk down the bright, sunny path.
+        Birds are singing in the trees.
+        *set gold 75
+        You find 25 gold coins on the ground!
+        
+    #Take the dark path
+        You bravely enter the dark, mysterious path.
+        *set health 85
+        You encounter a small goblin but defeat it!
+        
+    #Take the middle path
+        You choose the balanced middle path.
+        Everything feels peaceful here.
+        *set health 100
+        *set gold 60
+        You feel refreshed and find some coins!
+
+After your choice, you check your status:
+
+*stat_chart
+    text playerName
+    percent health
+    percent gold
+
+You continue your adventure...
+
+THE END (for now!)
+
+*finish

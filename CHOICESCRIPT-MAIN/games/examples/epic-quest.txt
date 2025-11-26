@@ -1,0 +1,73 @@
+*create hero_name ""
+*create strength 50
+*create magic 50
+*create wisdom 50
+
+Epic Quest - A Fantasy Adventure
+
+Welcome, brave hero!
+
+What is your name?
+*set hero_name "Adventurer"
+
+Greetings, ${hero_name}!
+
+You stand at the gates of the ancient kingdom.
+The king has summoned you for a dangerous quest.
+
+Choose your character class:
+
+*choice
+    #Warrior - Master of Strength
+        *set strength 80
+        *set magic 30
+        *set wisdom 40
+        You are a mighty WARRIOR!
+        Your muscles ripple with power.
+        
+    #Wizard - Master of Magic
+        *set strength 30
+        *set magic 80
+        *set wisdom 60
+        You are a powerful WIZARD!
+        Arcane energy flows through you.
+        
+    #Paladin - Master of Balance
+        *set strength 60
+        *set magic 60
+        *set wisdom 70
+        You are a noble PALADIN!
+        You balance strength and magic with wisdom.
+
+The king speaks:
+"${hero_name}, the dragon has stolen our kingdom's treasure!
+Will you help us?"
+
+*choice
+    #Yes, I will help!
+        "Brave ${hero_name}! Take this sword and go!"
+        *set strength 90
+        You receive a legendary sword!
+        
+    #I need more information first
+        "Wise choice, ${hero_name}. The dragon lives in the north mountains."
+        *set wisdom 80
+        Your wisdom increases from asking questions!
+        
+    #I want a reward first
+        "Very well, here are 100 gold coins in advance."
+        You receive gold but the king looks disappointed.
+
+Your Character Stats:
+
+*stat_chart
+    text hero_name
+    percent strength
+    percent magic
+    percent wisdom
+
+Your epic quest begins!
+
+To be continued...
+
+*finish

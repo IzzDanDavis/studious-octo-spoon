@@ -1,0 +1,40 @@
+*create character_name "Student"
+*create intelligence 50
+*create social 50
+*create athletics 50
+
+School Adventure
+
+Welcome to your first day at the new school!
+
+You are ${character_name}.
+
+The bell rings. What do you do?
+
+*choice
+    #Go to the library
+        You head to the library and study hard.
+        *set intelligence 70
+        You learn a lot!
+        
+    #Join a club
+        You join the drama club and make friends.
+        *set social 70
+        You feel more confident!
+        
+    #Try out for sports
+        You try out for the basketball team.
+        *set athletics 70
+        You make the team!
+
+Your school stats:
+
+*stat_chart
+    text character_name
+    percent intelligence
+    percent social
+    percent athletics
+
+The school year continues...
+
+*finish
