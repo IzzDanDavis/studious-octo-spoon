@@ -46,14 +46,13 @@
                     <textarea id="editor" placeholder="Start writing your ChoiceScript game here...
 
 Example:
-*create name &quot;&quot;
+*create name &quot;Hero&quot;
 *create strength 50
 *create intelligence 50
 
-Welcome to your adventure!
+Welcome to your adventure, ${name}!
 
-What is your name?
-*set name &quot;${name}&quot;
+Choose your path:
 
 *choice
     #I'm a warrior
@@ -63,6 +62,7 @@ What is your name?
         *set intelligence 70
         You chose the path of knowledge!
 
+Your character stats:
 *stat_chart
     text name
     percent strength
